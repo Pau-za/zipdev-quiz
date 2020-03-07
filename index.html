@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway|Spartan&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway|Spartan&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -28,23 +29,65 @@
     <div id="quiz contain">
         <h2 class="text center-align">Welcome to the ZipDev Quiz</h2>
         <div class="row">
-            <div class="col s12">
-                <ul class="tabs">
-                    <li class="tab col s3"><a class="active" href="#question1">Question 1</a></li>
-                    <li class="tab col s3"><a href="#question2">Question 2</a></li>
-                    <li class="tab col s3"><a href="#question3">Question 3</a></li>
-                    <li class="tab col s3"><a href="#question4">Question 4</a></li>
+            <div class="col s12 ">
+                <ul class="tabs ">
+                    <li class="tab col s3"><a class="active text" href="#question1">Question 1</a></li>
+                    <li class="tab col s3"><a class="text" href="#question2">Question 2</a></li>
+                    <li class="tab col s3"><a class="text" href="#question3">Question 3</a></li>
+                    <li class="tab col s3"><a class="text" href="#question4">Question 4</a></li>
                 </ul>
             </div>
-            <div id="question1" class="col s12">
+            <div id="question1" class="col s12 text center-align">
                 <h4>Question 1</h4>
+                <div>
+                    <h5>How do you describe yourself as a developer?</h5>
+                    <form action="#">
+                        <p>
+                            <label>
+                                <input class="with-gap q1" name="group1" type="radio" value="Hermit" />
+                                <span>Hermit</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap q1" name="group1" type="radio" value="Sociable" />
+                                <span>Sociable</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap q1" name="group1" type="radio" value="Serious" />
+                                <span>Serious</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap q1" name="group1" type="radio" value="Grumpy" />
+                                <span>Grumpy</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap q1" name="group1" type="radio" value="Unknown" />
+                                <span>Do not know yet</span>
+                            </label>
+                        </p>
+                        <button class="btn waves-effect waves-light  grey darken-3" type="submit" name="action">Next Question
+                            <i class="material-icons right">navigate_next</i>
+                        </button>
+                    </form>
+                </div>
 
             </div>
             <div id="question2" class="col s12">
-                    <h4>Question 2</h4>
-                </div>
-            <div id="question3" class="col s12">Question 3</div>
-            <div id="question4" class="col s12">Question 4</div>
+                <h4>Question 2</h4>
+            </div>
+            <div id="question3" class="col s12">
+                <h4>Question 3</h4>
+            </div>
+            <div id="question4" class="col s12">
+                <h4>Question 4</h4>
+            </div>
         </div>
     </div>
 
