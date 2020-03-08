@@ -19,9 +19,9 @@ const get1stQ = () => {
     const question1 = document.getElementsByClassName('q1');
     for (let i = 0; i < question1.length; i++) {
         if (question1[i].checked == true) {
-            // add info to the object;
             userAnswers.q1 = question1[i].value;
             console.log(userAnswers);
+            // pass to the next answer
         }
     };
 };
@@ -36,6 +36,7 @@ for (let i = 0; i < btns.length; i++) {
             //cambiar a pregunta 2
             //obtener el radiobutton seleccionado
             get1stQ();
+            console.log(btns);
         }
     })
 };
