@@ -43,7 +43,27 @@ const get2ndQ = () => {
     } else {
         document.getElementById('question2').classList.add('hide');
         document.getElementById('question3').classList.remove('hide');
+    };
+};
+
+let resultPalindrome = '';
+
+const isAPalindrome = (value) => {
+    const noSpaces = value.toLowerCase().replace(/[\W_]/g, '');
+    const reversedVal = noSpaces.split('').reverse().join('');
+    if (noSpaces == reversedVal) {
+        resultPalindrome = true;        
+        return true;
+    } else {
+        resultPalindrome = false;
+        return false;
     }
+};
+
+const get3thQ = () => {
+    const question3 = document.getElementsByClassName('q3');
+    isAPalindrome(question3[0].value);
+    userAnswers.q3 = question3[0].value;
     console.log(userAnswers);
 }
 
@@ -59,6 +79,9 @@ for (let i = 0; i < btns.length; i++) {
         } else if (specificBtn == 3) {
             get2ndQ();
             console.log('clicked btn 2');
+        } else if (specificBtn == 4) {
+            get3thQ();
+            console.log('clicked btn 3');
         }
     })
 };
