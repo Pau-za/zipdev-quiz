@@ -19,12 +19,25 @@ const get1stQ = () => {
     const question1 = document.getElementsByClassName('q1');
     for (let i = 0; i < question1.length; i++) {
         if (question1[i].checked == true) {
+            console.log('clicking 1 btn');
             userAnswers.q1 = question1[i].value;
-            console.log(userAnswers);
-            // pass to the next answer
         }
     };
-};
+    if (userAnswers.q1 == '') {
+        alert('You need to check an option to pass to the next question.');
+    } else {
+        document.getElementById('question1').classList.add('hide');
+        document.getElementById('question2').classList.remove('hide');
+    }
+    console.log(userAnswers);
+}
+
+const get2ndQ = () => {
+    const question2 = document.getElementsByClassName('q2');
+    for (let i = 0; i < question2.length; i++) {
+        userAnswers.q2 = question2[i].value;
+    }
+}
 
 const btns = document.getElementsByTagName('button');
 
