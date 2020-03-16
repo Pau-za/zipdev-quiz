@@ -6,6 +6,10 @@
     color: #212121;
 }
 
+#quiz {
+    margin: 0% 12%;
+}
+
 /* estilo de barra de progreso */
 #myProgress {
     width: 100%;
