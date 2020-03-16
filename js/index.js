@@ -10,7 +10,7 @@ $(document).ready(function () {
 
 const userAnswers = {
     'q1': '',
-    'q2': '',
+    'q2': [],
     'q3': '',
     'q4': ''
 };
@@ -28,15 +28,23 @@ const get1stQ = () => {
     } else {
         document.getElementById('question1').classList.add('hide');
         document.getElementById('question2').classList.remove('hide');
-    }
-    console.log(userAnswers);
+    };
 }
 
 const get2ndQ = () => {
     const question2 = document.getElementsByClassName('q2');
     for (let i = 0; i < question2.length; i++) {
-        userAnswers.q2 = question2[i].value;
+        if (question2[i].checked) {
+            console.log(question2[i].name);
+            userAnswers.q2.push(question2[i].name);
+        }
+    } if (userAnswers.q2[1] == '') {
+        alert('You need to select at least one option to pass to the next question.');
+    } else {
+        document.getElementById('question2').classList.add('hide');
+        document.getElementById('question3').classList.remove('hide');
     }
+    console.log(userAnswers);
 }
 
 const btns = document.getElementsByTagName('button');
@@ -46,10 +54,11 @@ for (let i = 0; i < btns.length; i++) {
         event.preventDefault();
         const specificBtn = btns[i].name;
         if (specificBtn == 2) {
-            //cambiar a pregunta 2
-            //obtener el radiobutton seleccionado
             get1stQ();
-            console.log(btns);
+            console.log('clicked btn 1');
+        } else if (specificBtn == 3) {
+            get2ndQ();
+            console.log('clicked btn 2');
         }
     })
 };
