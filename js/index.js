@@ -58,6 +58,7 @@ const isAPalindrome = (value) => {
         resultPalindrome = false;
         return false;
     }
+    
 };
 
 const get3thQ = () => {
@@ -98,6 +99,9 @@ userField.addEventListener('blur', () => {
 
 const get4thQ = () => {
     console.log('lalala');
+    const userPhrase = userField.value;
+    isAPalindrome(userPhrase);
+    console.log(resultPalindrome);
 }
 
 const btns = document.getElementsByTagName('button');
