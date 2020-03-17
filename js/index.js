@@ -6,6 +6,10 @@ $(document).ready(function () {
     $('.sidenav').sidenav();
 });
 
+$(document).ready(function () {
+    $('.collapsible').collapsible();
+});
+
 //hacer un objeto que guarde toda la informaci{on del usuario para pintarla al final del quiz}
 
 const userAnswers = {
@@ -38,7 +42,8 @@ const get2ndQ = () => {
             console.log(question2[i].name);
             userAnswers.q2.push(question2[i].name);
         }
-    } if (userAnswers.q2[1] == '') {
+    }
+    if (userAnswers.q2[1] == '') {
         alert('You need to select at least one option to pass to the next question.');
     } else {
         document.getElementById('question2').classList.add('hide');
@@ -52,13 +57,12 @@ const isAPalindrome = (value) => {
     const noSpaces = value.toLowerCase().replace(/[\W_]/g, '');
     const reversedVal = noSpaces.split('').reverse().join('');
     if (noSpaces == reversedVal) {
-        resultPalindrome = true;        
+        resultPalindrome = true;
         return true;
     } else {
         resultPalindrome = false;
         return false;
     }
-    
 };
 
 const get3thQ = () => {
@@ -72,10 +76,11 @@ const get3thQ = () => {
         document.getElementById('question3').classList.add('hide');
         document.getElementById('question4').classList.remove('hide');
     }
+    console.log(resultPalindrome);
 };
 
-let typingTimer;
-const typingInterval = 5000;
+// let typingTimer;
+// const typingInterval = 5000;
 const userField = document.getElementById('user_palindrome');
 
 
@@ -95,14 +100,22 @@ userField.addEventListener('blur', () => {
     document.getElementById('is_palindrome').value = reversedVal;
     document.getElementById('reversed').classList.add('active');
     // console.log(userVal.reverse());
-})
+});
 
 const get4thQ = () => {
     console.log('lalala');
     const userPhrase = userField.value;
     isAPalindrome(userPhrase);
     console.log(resultPalindrome);
-}
+    userAnswers.q4 = userPhrase;
+    console.log(userAnswers);
+    if (userAnswers == '') {
+        alert('This field cannot be empty');
+    } else {
+        document.getElementById('question4').classList.add('hide');
+        document.getElementById('results').classList.remove('hide');
+    }
+};
 
 const btns = document.getElementsByTagName('button');
 
