@@ -65,6 +65,39 @@ const get3thQ = () => {
     isAPalindrome(question3[0].value);
     userAnswers.q3 = question3[0].value;
     console.log(userAnswers);
+    if (userAnswers.q3 == '') {
+        alert('This field cannot be empty.');
+    } else {
+        document.getElementById('question3').classList.add('hide');
+        document.getElementById('question4').classList.remove('hide');
+    }
+};
+
+let typingTimer;
+const typingInterval = 5000;
+const userField = document.getElementById('user_palindrome');
+
+
+userField.addEventListener('blur', () => {
+    const userVal = userField.value.toLowerCase().split(' ').reverse();
+    let arrNew = [];
+    let reversedVal = '';
+    userVal.forEach((el) => {
+        if (el != '') {
+            const reversedWords = el.split('').reverse().join('');
+            // console.log(reversedWords);
+            arrNew.push(reversedWords);
+            reversedVal = arrNew.join(' ');
+            // console.log(arrNew.join(' '));
+        }
+    });
+    document.getElementById('is_palindrome').value = reversedVal;
+    document.getElementById('reversed').classList.add('active');
+    // console.log(userVal.reverse());
+})
+
+const get4thQ = () => {
+    console.log('lalala');
 }
 
 const btns = document.getElementsByTagName('button');
@@ -82,6 +115,8 @@ for (let i = 0; i < btns.length; i++) {
         } else if (specificBtn == 4) {
             get3thQ();
             console.log('clicked btn 3');
+        } else if (specificBtn == 'end') {
+            get4thQ();
         }
     })
 };
